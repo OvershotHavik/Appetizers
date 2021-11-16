@@ -38,8 +38,6 @@ struct AccountView: View {
                 
             }
             .navigationTitle("🤣 Account")
-
-            
         }
         .onAppear(perform: {
             viewModel.retrieveUser()

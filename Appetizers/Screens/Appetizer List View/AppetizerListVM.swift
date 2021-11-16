@@ -14,6 +14,7 @@ final class AppetizerListVM: ObservableObject{
     @Published var isLoading = false
     @Published var isShowingDetail = false
     @Published var selectedAppetizer: Appetizer?
+    
     func getAppetizers() {
         
         isLoading = true
@@ -38,6 +39,7 @@ final class AppetizerListVM: ObservableObject{
                         
                     case .unableToComplete:
                         alertItem = AlertContext.unableToComplete
+                    default: print("Not setup in getAppetizers switch")
                     }
                 }
             }

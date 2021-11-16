@@ -15,7 +15,7 @@ enum nutrients: String{
 
 struct AppetizerDetailView: View {
     @Binding var isShowingDetail: Bool
-    var appetizer: Appetizer
+    let appetizer: Appetizer
     
     var body: some View {
         VStack{
@@ -29,16 +29,22 @@ struct AppetizerDetailView: View {
                 NutrientView(nutrient: nutrients.protein.rawValue, nutrientValue: appetizer.protein)
             }
             
-            AddToOrderButton(price: appetizer.price)
+            Spacer()
+            
+            Button {
+                //do something
+            } label: {
+                APButton(title: "$\(appetizer.price, specifier: "%.2f") - Add To Order")
+            }
+
         }
         .frame(width: 300, height: 525)
         .background(Color(.systemBackground))
         .cornerRadius(12)
         .shadow(radius: 40)
         .overlay(alignment: .topTrailing) {
-            ExitButton(isShowingDetail: $isShowingDetail)
+            DismissButton(isShowingDetail: $isShowingDetail)
         }
-
     }
 }
 
@@ -82,26 +88,6 @@ struct NutrientView: View{
         }
     }
 }
-// MARK: - Add To Order View
-struct AddToOrderButton: View{
-    var price: Double
-    
-    var body: some View{
-        Button {
-            //action here
-        } label: {
-            Text("$\(price, specifier: "%.2f") - Add To Order")
-                .font(.title3)
-                .fontWeight(.semibold)
-                .foregroundColor(Color.white)
-                .frame(width: 260, height: 50)
-                .background(Color.brandPrimary)
-                .padding(.bottom, 30)
-        }
-
-    }
-}
-
 
 // MARK: - Appetizer Description View
 struct AppetizerDescriptionView: View{
@@ -128,29 +114,5 @@ struct AppetizerImageView: View{
         AppetizerRemoteImage(urlString: appetizer.imageURL)
             .aspectRatio(contentMode: .fit)
             .frame(width: 300, height: 225)
-    }
-}
-
-// MARK: - Exit Button
-struct ExitButton: View{
-    @Binding var isShowingDetail: Bool
-    var body: some View{
-        Button {
-            isShowingDetail = false
-        } label: {
-            ZStack{
-                Circle()
-                    .frame(width: 30, height: 30)
-                    .foregroundColor(.white)
-                    .opacity(0.6)
-                
-                Image(systemName: "xmark")
-                    .frame(width: 44, height: 44)
-                    .imageScale(.small)
-                    .foregroundColor(.black)
-            }
-            
-        }
-        
     }
 }

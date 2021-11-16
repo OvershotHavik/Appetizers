@@ -27,6 +27,8 @@
 		B34182E527442EC0000B7C46 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34182E427442EC0000B7C46 /* String+Ext.swift */; };
 		B34182E727444281000B7C46 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34182E627444281000B7C46 /* User.swift */; };
 		B34182E927444AA3000B7C46 /* OrderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34182E827444AA3000B7C46 /* OrderVM.swift */; };
+		B34182EC27445477000B7C46 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34182EB27445477000B7C46 /* EmptyState.swift */; };
+		B34182EE27445C91000B7C46 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34182ED27445C91000B7C46 /* Order.swift */; };
 		B389BFDE2742ACCD00C36CB6 /* AppetizersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389BFDD2742ACCD00C36CB6 /* AppetizersApp.swift */; };
 		B389BFE02742ACCD00C36CB6 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389BFDF2742ACCD00C36CB6 /* AppetizerTabView.swift */; };
 		B389BFE22742ACD800C36CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B389BFE12742ACD800C36CB6 /* Assets.xcassets */; };
@@ -74,6 +76,8 @@
 		B34182E427442EC0000B7C46 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		B34182E627444281000B7C46 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B34182E827444AA3000B7C46 /* OrderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderVM.swift; sourceTree = "<group>"; };
+		B34182EB27445477000B7C46 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
+		B34182ED27445C91000B7C46 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B389BFDA2742ACCD00C36CB6 /* Appetizers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B389BFDD2742ACCD00C36CB6 /* AppetizersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizersApp.swift; sourceTree = "<group>"; };
 		B389BFDF2742ACCD00C36CB6 /* AppetizerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTabView.swift; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 			children = (
 				B30736EA2742C2B4005320D2 /* Appetizer.swift */,
 				B34182E627444281000B7C46 /* User.swift */,
+				B34182ED27445C91000B7C46 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 		B30737062742F6CB005320D2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B34182EA2744545F000B7C46 /* Empty State */,
 				B34182DB27440D7C000B7C46 /* Buttons */,
 				B30737082742F6EF005320D2 /* Image */,
 				B30737072742F6D8005320D2 /* Cells */,
@@ -246,6 +252,14 @@
 				B34182DE27440FBD000B7C46 /* DismissButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		B34182EA2744545F000B7C46 /* Empty State */ = {
+			isa = PBXGroup;
+			children = (
+				B34182EB27445477000B7C46 /* EmptyState.swift */,
+			);
+			path = "Empty State";
 			sourceTree = "<group>";
 		};
 		B389BFD12742ACCD00C36CB6 = {
@@ -437,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34182EC27445477000B7C46 /* EmptyState.swift in Sources */,
 				B30736EB2742C2B4005320D2 /* Appetizer.swift in Sources */,
 				B30736F32742DD8B005320D2 /* AppetizerListVM.swift in Sources */,
 				B30736F12742CFC3005320D2 /* APError.swift in Sources */,
@@ -454,6 +469,7 @@
 				B30736FB2742F136005320D2 /* RemoteImage.swift in Sources */,
 				B34182DA2743ED82000B7C46 /* AppetizerDetailView.swift in Sources */,
 				B30736ED2742CA99005320D2 /* AppetizerCell.swift in Sources */,
+				B34182EE27445C91000B7C46 /* Order.swift in Sources */,
 				B30736F52742E230005320D2 /* Alert.swift in Sources */,
 				B30736E52742AEC0005320D2 /* AppetizerListView.swift in Sources */,
 				B34182E527442EC0000B7C46 /* String+Ext.swift in Sources */,

@@ -15,6 +15,8 @@ enum nutrients: String{
 
 struct AppetizerDetailView: View {
     @Binding var isShowingDetail: Bool
+    @EnvironmentObject var order : Order
+    
     let appetizer: Appetizer
     
     var body: some View {
@@ -32,7 +34,8 @@ struct AppetizerDetailView: View {
             Spacer()
             
             Button {
-                //do something
+                order.add(appetizer)
+                isShowingDetail = false
             } label: {
                 APButton(title: "$\(appetizer.price, specifier: "%.2f") - Add To Order")
             }

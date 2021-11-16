@@ -19,6 +19,7 @@
 		B30736F72742E69D005320D2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30736F62742E69D005320D2 /* LoadingView.swift */; };
 		B30736F92742E9F0005320D2 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30736F82742E9F0005320D2 /* Color+Ext.swift */; };
 		B30736FB2742F136005320D2 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30736FA2742F136005320D2 /* RemoteImage.swift */; };
+		B34182DA2743ED82000B7C46 /* AppetizerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34182D92743ED82000B7C46 /* AppetizerDetailView.swift */; };
 		B389BFDE2742ACCD00C36CB6 /* AppetizersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389BFDD2742ACCD00C36CB6 /* AppetizersApp.swift */; };
 		B389BFE02742ACCD00C36CB6 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389BFDF2742ACCD00C36CB6 /* AppetizerTabView.swift */; };
 		B389BFE22742ACD800C36CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B389BFE12742ACD800C36CB6 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		B30736F62742E69D005320D2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B30736F82742E9F0005320D2 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		B30736FA2742F136005320D2 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		B34182D92743ED82000B7C46 /* AppetizerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDetailView.swift; sourceTree = "<group>"; };
 		B389BFDA2742ACCD00C36CB6 /* Appetizers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B389BFDD2742ACCD00C36CB6 /* AppetizersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizersApp.swift; sourceTree = "<group>"; };
 		B389BFDF2742ACCD00C36CB6 /* AppetizerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTabView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		B30736FC2742F5D7005320D2 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				B34182D82743ED6F000B7C46 /* Appetizer Detail */,
 				B389BFDF2742ACCD00C36CB6 /* AppetizerTabView.swift */,
 				B30736FD2742F5EC005320D2 /* Appetizer List View */,
 				B30736FE2742F5FE005320D2 /* Account View */,
@@ -206,6 +209,14 @@
 				B30736FA2742F136005320D2 /* RemoteImage.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		B34182D82743ED6F000B7C46 /* Appetizer Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B34182D92743ED82000B7C46 /* AppetizerDetailView.swift */,
+			);
+			path = "Appetizer Detail";
 			sourceTree = "<group>";
 		};
 		B389BFD12742ACCD00C36CB6 = {
@@ -407,6 +418,7 @@
 				B389BFDE2742ACCD00C36CB6 /* AppetizersApp.swift in Sources */,
 				B30736EF2742CEE3005320D2 /* NetworkManager.swift in Sources */,
 				B30736FB2742F136005320D2 /* RemoteImage.swift in Sources */,
+				B34182DA2743ED82000B7C46 /* AppetizerDetailView.swift in Sources */,
 				B30736ED2742CA99005320D2 /* AppetizerCell.swift in Sources */,
 				B30736F52742E230005320D2 /* Alert.swift in Sources */,
 				B30736E52742AEC0005320D2 /* AppetizerListView.swift in Sources */,

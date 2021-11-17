@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-final class AppetizerListVM: ObservableObject{
-    
+@MainActor final class AppetizerListVM: ObservableObject{
+    //Main Actor makes anything done in this class is automatically switched to the main thread, DispatchQueue.main.async is no longer needed
     @Published var appetizers: [Appetizer] = []
     @Published var alertItem: AlertItem?
     @Published var isLoading = false
     @Published var isShowingDetail = false
     @Published var selectedAppetizer: Appetizer?
-    
+    /*
     func getAppetizers() {
         
         isLoading = true
@@ -45,6 +45,34 @@ final class AppetizerListVM: ObservableObject{
             }
         }
     }
+     */
+    
+    func getAppetizers() {
+        
+        isLoading = true
+        Task {
+            do{
+                appetizers = try await NetworkManager.shared.getAppetizer()
+                isLoading = false
+            }catch{
+                if let apError = error as? APError{
+                    switch apError {
+                        //only ones that would come through should be invalidURL or invalid data, but wanted to keep the other cases
+                    case .invalidURL:
+                        alertItem = AlertContext.invalidURL
+                    case .invalidData:
+                        alertItem = AlertContext.invalidData
+                    default: alertItem = AlertContext.invalidResponse // generic error if wanted..
+                    }
+                } else {
+                    alertItem = AlertContext.invalidResponse // generic error would go here
+                    isLoading = false
+                }
+
+            }
+        }
+    }
+    
 }
 
 

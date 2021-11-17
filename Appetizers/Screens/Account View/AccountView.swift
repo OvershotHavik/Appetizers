@@ -21,7 +21,7 @@ struct AccountView: View {
                 Section(header: Text("Personal Info")) {
                     TextField("First Name", text: $viewModel.user.firstName)
                         .focused($focusedTextField, equals: .firstName)
-                        .onSubmit { focusedTextField = .lastName}
+                        .onSubmit { focusedTextField = .lastName} // when user taps "next" it goes to the field specified
                         .submitLabel(.next)
                     
                     TextField("Last Name", text: $viewModel.user.lastName)
@@ -30,7 +30,7 @@ struct AccountView: View {
                         .submitLabel(.next)
                     TextField("Email", text: $viewModel.user.email)
                         .focused($focusedTextField, equals: .email)
-                        .onSubmit { focusedTextField = nil}
+                        .onSubmit { focusedTextField = nil} // when user hits continue, it dismisses the keyboard
                         .submitLabel(.continue)
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)

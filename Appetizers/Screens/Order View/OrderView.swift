@@ -28,36 +28,23 @@ struct OrderView: View {
                              orderItems.remove(atOffsets: indexSet)
                          })
                          */
-                        
-                        
                     }
                     .listStyle(.plain)
-                    
 
                     Button {
                         
                     } label: {
                         APButton(title: "$\(order.totalPrice, specifier: "%.2f") - Place Order ")
                     }
-
                 }
-                
                 if order.items.isEmpty{
                     EmptyState(imageName: "empty-order",
                                message: "You have no items in your order. \nPlease add an appetizer!")
                 }
             }
-
             .navigationTitle("🧾 Orders")
-            
-            
-            
-            
         }
     }
-    
-
-    
 }
 
 struct OrderView_Previews: PreviewProvider {

@@ -12,10 +12,24 @@ struct AppetizerCell: View {
     var body: some View {
         HStack(spacing: 10){
             
-            AppetizerRemoteImage(urlString: appetizer.imageURL)
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 120, height: 90)
-                .cornerRadius(8)
+//            AppetizerRemoteImage(urlString: appetizer.imageURL)
+            
+            //Async does NOT cache though, keep that in mind
+            AsyncImage(url: URL(string: appetizer.imageURL)) { Image in
+                Image
+                //could be set as a custom modifier
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 120, height: 90)
+                    .cornerRadius(8)
+            } placeholder: {
+                Image("food-placeholder")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 120, height: 90)
+                    .cornerRadius(8)
+            }
+
             
             VStack(alignment: .leading, spacing: 5){
                 

@@ -26,9 +26,9 @@ struct AppetizerDetailView: View {
             AppetizerDescriptionView(appetizer: appetizer)
             
             HStack(spacing: 50){
-                NutrientView(nutrient: nutrients.calories.rawValue, nutrientValue: appetizer.calories)
-                NutrientView(nutrient: nutrients.carbs.rawValue, nutrientValue: appetizer.carbs)
-                NutrientView(nutrient: nutrients.protein.rawValue, nutrientValue: appetizer.protein)
+                NutrientView(nutrient: .calories, nutrientValue: "\(appetizer.calories)")
+                NutrientView(nutrient: .carbs, nutrientValue: "\(appetizer.carbs) g")
+                NutrientView(nutrient: .protein, nutrientValue: "\(appetizer.protein) g")
             }
             
             Spacer()
@@ -64,35 +64,18 @@ struct AppetizerDetailView_Previews: PreviewProvider {
 
 // MARK: - Nutrient View
 struct NutrientView: View{
-    var nutrient: String
-    var nutrientValue: Int
+    var nutrient: nutrients
+    var nutrientValue: String
     
     var body: some View{
         VStack(spacing: 10){
-            Text(nutrient)
+            Text(nutrient.rawValue)
                 .font(.caption)
                 .fontWeight(.bold)
-
-            if nutrient == nutrients.carbs.rawValue{
-                Text("\(nutrientValue) g")
-                    .foregroundColor(.secondary)
-                    .fontWeight(.semibold)
-                    .italic()
-            }
-            
-            if nutrient == nutrients.protein.rawValue{
-                Text("\(nutrientValue) g")
-                    .foregroundColor(.secondary)
-                    .fontWeight(.semibold)
-                    .italic()
-            }
-            
-            if nutrient == nutrients.calories.rawValue{
-                Text("\(nutrientValue)")
-                    .foregroundColor(.secondary)
-                    .fontWeight(.semibold)
-                    .italic()
-            }
+            Text("\(nutrientValue)")
+                .foregroundColor(.secondary)
+                .fontWeight(.semibold)
+                .italic()
         }
     }
 }
